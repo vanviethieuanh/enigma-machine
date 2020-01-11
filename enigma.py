@@ -26,7 +26,16 @@ while True:
     keyinput = ord(str.upper(input("Enter key: "))) - 65
     output = rotoA.reverse(rotoB.reverse(rotoC.reverse(25 - (rotoC.input(rotoB.input(rotoA.input(keyinput)))))))
     os.system('clear')
+
+    rotoA.printRoto()
+    rotoB.printRoto()
+    rotoC.printRoto()
+
     LightUp(chr(output+65))
+    if rotoA.dotMarking == 25:
+        rotoB.rotate()
+    if rotoB.dotMarking == 25:
+        rotoC.rotate()
     rotoA.rotate()
 
 

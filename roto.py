@@ -1,5 +1,6 @@
 import random
 import terminaltables
+from colorclass import Color
 
 class Roto:
 
@@ -10,8 +11,13 @@ class Roto:
         for c in rotoWiring:
             self.pathway.append(ord(c)-65)
 
+        self.dotMarking = 0 # in the enigma machine, people marking dot for "A" contact
+
     def rotate(self):
         self.pathway = self.pathway[1:] + self.pathway[:1]
+        self.dotMarking += 1
+        if self.dotMarking == 26:
+            self.dotMarking = 0
 
     def input(self,index):
         return self.pathway[index]
@@ -20,10 +26,9 @@ class Roto:
         return self.pathway.index(number)
     
     def printRoto(self):
-        map = "|"
-        for i in self.pathway:
-            map += (chr(i+65)) + "|"
-        map = map[0:-1]
+        map = Color("{autoblack}"+"|" + str(chr(self.pathway[-1]+65)) + "{/autoblack}")
+        map += "|" + (chr(self.pathway[0]+65)) + "|"
+        map += Color("{autoblack}" + str(chr(self.pathway[1]+65))+ "|" + "{/autoblack}")
         print(map)
         pass
 
