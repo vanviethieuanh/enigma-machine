@@ -72,13 +72,13 @@ def OpenPlugBoard(Plugboard):
                     for pair in Plugboard:
                         if key1 == pair[0] or key1 == pair[1]:
                             print ("the key ",command[0]," has been plugged, please enter another key")
-                            hold = input()
+                            input()
                             allow = False
                             break
                         
                         if key2 == pair[0] or key2 == pair[1]:
                             print ("the key ",command[1]," has been plugged, please enter another key")
-                            hold = input()
+                            input()
                             allow = False
                             break
                     if not allow:
@@ -135,7 +135,7 @@ def main():
     while True:
         os.system('clear')
 
-        options = [["1.Use".center(ter_size-4)],["2.Plug board"],["3.Custom roto wiring"],["x.Exit"]]
+        options = [["1.Use".center(ter_size-4)],["2.Plug board"],["3.Ring settings"],["4.Custom roto wiring"],["x.Exit"]]
         MessengerBox(options,"Enigma")
         option = input("Your option >> ")
 
@@ -151,14 +151,23 @@ def main():
             rotoB.printRoto()
             rotoC.printRoto()
             LightUp(None)
-            working = True
-            while working:
+            PrintPlugBoard(Plugboard)
+
+            while True:
                 # input & processing
                 typed = input("Enter key: ")
                 if typed == 'exit':
-                    working = False
                     break
+
                 keyinput = ord(str.upper(typed)) - 65
+
+                for pair in Plugboard:
+                    if keyinput == pair[0]:
+                        keyinput = pair[1]
+                        break
+                    if keyinput == pair[1]:
+                        keyinput = pair[0]
+                        break
 
                 output = rotoA.reverse(rotoB.reverse(rotoC.reverse(
                         25 - (rotoC.input(rotoB.input(rotoA.input(keyinput)))))))
@@ -171,12 +180,13 @@ def main():
                         output = pair[0]
                         break
                 
-                # reprint the keyboard and roto
+                # reprint the rotos, keyboard, plugboard
                 os.system('clear')
                 rotoA.printRoto()
                 rotoB.printRoto()
                 rotoC.printRoto()
                 LightUp(chr(output+65))
+                PrintPlugBoard(Plugboard)
 
                 # notched ring
                 if rotoA.dotMarking == 25:
@@ -192,9 +202,28 @@ def main():
             OpenPlugBoard(Plugboard)
 
         # ----------------------------------------------------------------------
-        # 3.Custom roto wiring
+        # 3. Ring settings
         # ----------------------------------------------------------------------
         if option == '3':
+            os.system('clear')
+
+            MessengerBox([["Enter a number for ring settings"]],"Guide")
+
+            rotoA.rotateTo(int(input(">>")))
+            rotoA.printRoto()
+            rotoB.rotateTo(int(input(">>")))
+            rotoB.printRoto()
+            rotoC.rotateTo(int(input(">>")))
+            rotoC.printRoto()
+
+            input()
+
+
+
+        # ----------------------------------------------------------------------
+        # 4.Custom roto wiring
+        # ----------------------------------------------------------------------
+        if option == '4':
             CustomRotoWiring(rotoA,rotoB,rotoC)
             
             
