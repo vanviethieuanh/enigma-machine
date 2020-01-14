@@ -15,6 +15,7 @@ class Roto:
         self.dotMarking = 0 # in the enigma machine, people marking dot for "A" contact
 
     def enterWiring(self):
+        self.pathway.clear()
         rotoWiring = input("Please enter roto's Wiring: ")
         for c in rotoWiring:
             self.pathway.append(ord(c)-65)
@@ -29,7 +30,7 @@ class Roto:
             self.dotMarking = 0
 
     def rotateTo(self, number):
-        self.dotMarking = number - 1
+        self.dotMarking = (number - 1)%25
         if self.dotMarking == 26:       
             self.dotMarking = 0
 

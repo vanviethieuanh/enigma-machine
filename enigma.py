@@ -218,25 +218,11 @@ def main():
 
             input()
 
-
-
         # ----------------------------------------------------------------------
         # 4.Custom roto wiring
         # ----------------------------------------------------------------------
         if option == '4':
-            CustomRotoWiring(rotoA,rotoB,rotoC)
-            
-            
-
+            CustomRotoWiring(rotoA,rotoB,rotoC)    
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-
-
-
