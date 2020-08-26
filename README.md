@@ -22,7 +22,7 @@ python3 enigma.py
 
 <p><a href="https://commons.wikimedia.org/wiki/File:Enigma_(crittografia)_-_Museo_scienza_e_tecnologia_Milano.jpg#/media/File:Enigma_(crittografia)_-_Museo_scienza_e_tecnologia_Milano.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Enigma_%28crittografia%29_-_Museo_scienza_e_tecnologia_Milano.jpg" alt="Enigma (crittografia) - Museo scienza e tecnologia Milano.jpg"></a><br>By Alessandro Nassiri - <a href="https://en.wikipedia.org/wiki/en:Museo_Nazionale_Scienza_e_Tecnologia_Leonardo_da_Vinci" class="extiw" title="w:en:Museo Nazionale Scienza e Tecnologia Leonardo da Vinci">Museo della Scienza e della Tecnologia "Leonardo da Vinci"</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=47910919">Link</a></p>
 
-### 1.Use 😎
+### 1. Use 😎
 
 ![use](images/use.png)
 
@@ -34,7 +34,7 @@ on top of the board is roto, in the real Enigma machine, there only one number s
 
 above of the light-board is Plug board, but if you don't plug anything, There're just input keyboard here. Don't worry about the message, you don't need plug to use this Enigma machine 😙
 
-### 2.Plug board 🔌
+### 2. Plug board 🔌
 
 > ...
 >
@@ -46,7 +46,7 @@ above of the light-board is Plug board, but if you don't plug anything, There're
 >
 > ---- _by [Wikipedia](https://en.wikipedia.org/wiki/Enigma_machine#Plugboard)_
 
-### 3.Ring settings 👌
+### 3. Ring settings 👌
 
 > The rotors (alternatively _wheels_ or _drums_, _Walzen_ in German) form the heart of an Enigma machine.
 >
@@ -56,7 +56,7 @@ so if you've read the article in [Wikipedia](https://en.wikipedia.org/wiki/Enigm
 
 To setup in the real model, I think you gonna want to shift it by hand ✋. In this Enigma Machine all you need to do is enter the value which the shift times of each rings. Notice that the rotos in this python model show vertically from top to bottom ⏬ (in the real model it horizontally, from left to right ➡️ ).
 
-### 4.Custom roto wiring 🔀
+### 4. Custom roto wiring 🔀
 
 > The mechanical parts act by forming a varying [electrical circuit](https://en.wikipedia.org/wiki/Electrical_network "Electrical network"). When a key is pressed, one or more rotors rotate on the spindle. On the sides of the rotors are a series of electrical contacts that, after rotation, line up with contacts on the other rotors or fixed wiring on either end of the spindle. When the rotors are properly aligned, each key on the keyboard is connected to a unique electrical pathway through the series of contacts and internal wiring.
 >
@@ -72,7 +72,7 @@ a given machine configuration will encoded A to L, B to U, C to S, ..., and Z to
 
 By default, the wiring of this Enigma Machine is the wiring of [Commercial 💰 Enigma](https://en.wikipedia.org/wiki/Enigma_machine#Commercial_Enigma) which I think the simplest. You can take a look of [details about roto](https://en.wikipedia.org/wiki/Enigma_rotor_details) for better explain and [Roto wiring tables 🔀](https://en.wikipedia.org/wiki/Enigma_rotor_details#Rotor_wiring_tables) for another model's wiring.
 
-### 5.Codebook
+### 5. Codebook 📖
 
 > A codebook is a type of document used for gathering and storing cryptography codes. Originally codebooks were often literally books, but today codebook is a byword for the complete record of a series of codes, regardless of physical format.
 > by [Wikipedia](https://en.wikipedia.org/wiki/Codebook)
@@ -84,4 +84,4 @@ so if you want to set up your enigma machine like a soilder, take a look at this
 | ----------------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
 | Date of the month 📆<br/> For each day, we have diffrent settings | we don't have this setting 😅<br/>cuz we just have 3 rotos | The shifting value<br/>of rings by order | With a pair of characters, it's mean you should plug 🔌 them together.<br/> In this machine, you just need to type all **one by one**. | 😅         |
 
-**Hope you have fun with it ❤️**
+**Hope you have fun with it! ❤️**
